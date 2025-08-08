@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookshelf</title>
+<link rel="stylesheet" href="C:\Users\Student\Documents\Swarang\style.css">
+</head>
+<header>
+<h1>Bookshelf</h1>
+<header>
+<nav>
+<ul>
+<li><a href="C:\Users\Student\Documents\Swarang\Vachan Sanskruti.html">Home</a></li>
+ <li><a href="C:\Users\Student\Documents\Activities.html">Activities</a></li>
+ <li><a href="admission.html">About</a></li>
+ <li><a href="Contact us.html">Contact</a></li> </ul>
+ </nav>
+ </header>
+<style>
+.card   {
+max-width: 2200px;
+margin: auto;
+background-color: #7CFC00;
+padding: 25px;
+border: 2px solid #333;
+ border-radius: 8px;
+box-shadow: 2px 2px 20px gray
+}
+
+ p {
+      font-family: 'Times New Roman', serif;
+      font-size: 18px;
+      color: #CD5C5C;
+      font-style: Ariel;
+      align: centre;
+}
+h1  {
+color:#E9967A ;
+font-size: 25px;
+}
+
+.sale {
+background: #FF8C00;
+color: white;
+text-align: center;
+padding: 20px;
+font-size: 24px;
+animation: blink 1s infinite alternate;
+}
+@keyframes blink {
+ from { opacity: 5; }
+ to { opacity: 0.5; }
+ }
+h1  {
+color:#4682B4 ;
+font-size: 25px;
+}
+
+.cart {
+margin-top:50px;
+padding:25px;
+ background-color:orange;
+ display: inline-block;
+ border-radius:25px;
+}
+</style>
+</head>
+<body>
+<div class="sale">
+Manga Books For Children
+</div>
+<div class="card">
+
+
+    <h1>Welcome to the Shop!</h1>
+    <p>Click the button to add an item to the cart.</p>
+
+    <div class="item">
+<h1><b>Naruto</b></h1>
+        <p><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421528427/naruto-vol-41-9781421528427_hr.jpg" height="150" width="150" align="centre"> 
+<p>Rating is: 4.8/★★★★★</p>
+<h1>By Masashi Kishimoto</h1>
+ <button onclick="addToCart('Naruto')">Add to Cart</button>
+    </div>
+
+
+
+
+    <div class="item">
+<h1>Bleach</h1>
+        <p><img src="https://tse1.mm.bing.net/th/id/OIP.k98F7Wc1LxDFPm39i5XreQHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" height="150" width="150" align="centre"> 
+<p>Rating is: 4.7/★★★★★</p>
+<h1>By Tite Kubo</h1>
+        <button onclick="addToCart('Bleach')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+<h1>One Piece</h1>
+        <p><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421538518/one-piece-vol-57-9781421538518_hr.jpg" height="150" width="150" align="centre">
+<p>Rating is: 4.5/★★★★★</p>
+<h1>By Eiichiro Oda</h1>
+        <button onclick="addToCart('One Piece')">Add to Cart</button>
+    </div>
+<div class="item">
+<p><b>Dragon Ball</b></p>
+        <p><img src="https://tse3.mm.bing.net/th/id/OIP.PY8ozMuzGEBKgTzAYPqBQQHaLH?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" height="150" width="150" align="centre"> </p>
+<p>Rating is: 4.6/★★★★★</p>
+<p><b>By Akira Toriyama</b></p>
+        <button onclick="addToCart('Dragon Ball')">Add to Cart</button>
+    </div>
+<div class="item">
+<p><b>Attack On Titan</b></p>
+<p> <img src="https://tse1.mm.bing.net/th/id/OIP.WGwcBZJDkRzAToFz6A9X2gAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" height="150" width="150" align="centre">
+<p>Rating is: 4.4/★★★★★</p>
+<p><b>By Hajime Isayama</b></p>
+        <button onclick="addToCart('AOT')">Add to Cart</button>
+
+    </div>
+    <div class="cart">
+        <h3>Shopping Cart</h3>
+        <p id="cartList">Cart is empty</p>
+    </div>
+    <script>
+        let totalAmount = 0;
+
+        function addToCart(item, price) {
+            let cart = document.getElementById("cartList");
+            let total = document.getElementById("totalAmount");
+
+            // Update cart items
+            if (cart.innerHTML === "Cart is empty") {
+                cart.innerHTML = item;
+            } else {
+                cart.innerHTML += ", " + item;
+            }
+
+            // Update total amount
+            totalAmount += price;
+            total.innerHTML = totalAmount;
+        }
+    </script>
+
+</body>
+</html>
