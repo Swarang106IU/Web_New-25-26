@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { background-color: #00FFFF; font-size: 28px; padding: 20px 40px; margin: 5px; }
+        #result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+        #score { margin-top: 10px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    
+    <p>Choose your move:</p>
+    <button onclick="playGame('rock')">🪨 Rock</button>
+    <button onclick="playGame('paper')">📄 Paper</button>
+    <button onclick="playGame('scissors')">✂️ Scissors</button>
+
+    <div id="result"></div>
+    <div id="score">Player: 0 | AI: 0</div>
+    <script>
+        let playerScore = 0;
+        let aiScore = 0;
+
+        function aiMove() {
+            // Basic AI: Random selection
+            const moves = ['rock', 'paper', 'scissors'];
+            return moves[Math.floor(Math.random() * moves.length)];
+        }
+
+        function determineWinner(player, ai) {
+            if (player === ai) return 'Draw';
+            if (
+                (player === 'rock' && ai === 'scissors') ||
+                (player === 'paper' && ai === 'rock') ||
+                (player === 'scissors' && ai === 'paper')
+            ) return 'Player';
+            return 'AI';
+        }
+
+        function playGame(playerChoice) {
+            const aiChoice = aiMove();
+            const winner = determineWinner(playerChoice, aiChoice);
+
+            let resultText = `You chose ${playerChoice}, AI chose ${aiChoice}. `;
+            if (winner === 'Draw') resultText += "It's a Draw!";
+            else if (winner === 'Player') {
+                playerScore++;
+                resultText += "You Win! 🎉";
+            } else {
+                aiScore++;
+                resultText += "AI Wins! 🤖";
+            }
+
+            document.getElementById('result').textContent = resultText;
+            document.getElementById('score').textContent = `Player: ${playerScore} | AI: ${aiScore}`;
+        }
+    </script>
+</body>
+</html>
