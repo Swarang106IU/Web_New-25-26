@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Quiz App</title>
+</head>
+<body>
+   <div class="quiz-container">
+       <h2>Simple Quiz</h2>
+       <ul class="quiz">
+           <li>
+               <h4>What is the capital of France?</h4>
+               <ul class="choices">
+                   <li><label><input type="radio" name="question0" value="A"> Paris</label></li>
+                   <li><label><input type="radio" name="question0" value="B"> Berlin</label></li>
+                   <li><label><input type="radio" name="question0" value="C"> Madrid</label></li>
+               </ul>
+           </li>
+
+           <li>
+               <h4>Which language is used for web development?</h4>
+               <ul class="choices">
+                   <li><label><input type="radio" name="question1" value="A"> Python</label></li>
+                   <li><label><input type="radio" name="question1" value="B"> HTML</label></li>
+                   <li><label><input type="radio" name="question1" value="C"> Java</label></li>
+               </ul>
+           </li>
+
+      
+  <li>
+               <h4>Identify the monument?</h4>
+                  <img src="https://c8.alamy.com/comp/2B0B8XK/world-biggest-statue-statue-of-unity-at-the-western-part-of-india-near-the-bank-of-the-river-the-narmada-2B0B8XK.jpg" height="250" breadth="250">
+               <ul class="choices">
+                   <li><label><input type="radio" name="question2" value="A"> Statue of Liberty</label></li>
+                   <li><label><input type="radio" name="question2" value="B"> Eiffiel Tower</label></li>
+                   <li><label><input type="radio" name="question2" value="C"> Statue of Unity</label></li>
+               </ul>
+           </li>
+
+  <li>
+         <h4>Identify the persnality?</h4>
+                  <img src="https://th.bing.com/th/id/OSK.HEROaBPAiE8jinLnUlCfNz05X_l1xbnRwxSToMurQ-xay1g?w=472&h=280&c=13&rs=2&o=6&oif=webp&pid=SANGAM" height="250" breadth="250">
+               <ul class="choices">
+                   <li><label><input type="radio" name="question3" value="A"> Josheph Stalin</label></li>
+                   <li><label><input type="radio" name="question3" value="B"> Rahul Gandhi</label></li>
+                   <li><label><input type="radio" name="question3" value="C"> Adolf Hitler</label></li>
+               </ul>
+           </li>
+
+       <button onclick="calculateScore()">Submit</button>
+       <p id="result"></p>
+   </div>
+</body>
+<script src="script.js"></script>
+</html>
