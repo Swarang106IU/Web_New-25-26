@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><title>YMCA Youth Sports Registration Form — Football</title></title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+   
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Game Schedule</a></li>
+        <li><a href="#">Training Session</a></li>
+      </ul>
+    </nav>
+  </header>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #5F9EA0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #808080;
+  color: White;
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('https://source.unsplash.com/1600x900/?restaurant,food') no-repeat center center/cover;
+  color: neon;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff6347;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.menu {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.menu h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.item {
+  background-color: #ffe4c4;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.contact {
+  padding: 3rem 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+footer {
+  background-color: #8b0000;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+</style>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.4; margin: 24px; }
+    form { max-width: 900px; margin: 0 auto; }
+    fieldset { border: 1px solid #ccc; padding: 16px; margin-bottom: 20px; }
+    legend { font-weight: 600; padding: 0 8px; }
+    .row { display: grid; grid-template-columns: repeat(2, minmax(240px, 1fr)); gap: 12px; }
+    .row-3 { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 12px; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; }
+    input[type="text"], input[type="tel"], input[type="date"], input[type="number"], input[type="email"],
+    select, textarea { width: 100%; padding: 8px; border: 1px solid #bbb; border-radius: 4px; }
+    .inline-group { display: flex; flex-wrap: wrap; gap: 12px; }
+    .note { font-size: 0.95em; color: #555; margin-top: 6px; }
+    .actions { display: flex; gap: 12px; }
+    button { padding: 10px 16px; border: 0; border-radius: 4px; cursor: pointer; }
+    .primary { background: #0066cc; color: #fff; }
+    .secondary { background: #eee; }
+    small { color: #555; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SPORTS REGISTRATION FORM</h1>
+    <p>Please complete this registration form and return with payment to the Espada.</p>
+  </header>
+
+  <form action="#" method="post" novalidate>
+    <fieldset>
+      <legend>Program details</legend>
+
+      <div class="row">
+        <div>
+          <label for="program">Program registering for</label>
+          <select id="program" name="program" required>
+            <option value="Football" selected>Football</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Membership status</label>
+          <div class="inline-group" role="group" aria-label="Membership status">
+            <label><input type="radio" name="membership" value="Member" required /> Member</label>
+            <label><input type="radio" name="membership" value="Non-Member" /> Non-Member</label>
+          </div>
+        </div>
+      </div>
+
+      <label>Age group</label>
+      <div class="inline-group" role="group" aria-label="Age group">
+        <label><input type="radio" name="ageGroup" value="6-7 Rookies" required /> 6 to 7 yrs. Rookies</label>
+        <label><input type="radio" name="ageGroup" value="8-9 Champions" /> 8–9 yrs. Champions</label>
+        <label><input type="radio" name="ageGroup" value="10-14 All Stars" /> 10–14 yrs. All Stars</label>
+        <label><input type="radio" name="ageGroup" value="15-22 Legends" /> 15-22 Legends</label>
+
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Child information</legend>
+
+      <div class="row">
+        <div>
+          <label for="childName">Child’s name</label>
+          <input id="childName" name="childName" type="text" required />
+        </div>
+        <div>
+          <label for="childSex">Sex</label>
+          <select id="childSex" name="childSex" required>
+            <option value="" selected disabled>Select</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="birthdate">Birthdate</label>
+          <input id="birthdate" name="birthdate" type="date" required />
+        </div>
+        <div>
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="1" max="22" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="school">School attending</label>
+          <input id="school" name="school" type="text" required />
+        </div>
+        <div>
+          <label for="grade">Grade</label>
+          <input id="grade" name="grade" type="text" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="homePhone">Home phone</label>
+          <input id="homePhone" name="homePhone" type="tel" placeholder="+1 (###) ###-####" />
+        </div>
+        <div>
+          <label for="parentCell">Parent’s cell</label>
+          <input id="parentCell" name="parentCell" type="tel" placeholder="+1 (###) ###-####" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="homeAddress">Home address</label>
+          <input id="homeAddress" name="homeAddress" type="text" required />
+        </div>
+        <div>
+          <label for="zip">Zip</label>
+          <input id="zip" name="zip" type="text" pattern="[0-9A-Za-z -]{3,10}" required />
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Parent/guardian information</legend>
+
+      <div class="row">
+        <div>
+          <label for="parent1Name">Parent/Guardian name (1)</label>
+          <input id="parent1Name" name="parent1Name" type="text" required />
+        </div>
+        <div>
+          <label for="parent1Dob">Date of birth (1)</label>
+          <input id="parent1Dob" name="parent1Dob" type="date" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="parent2Name">Parent/Guardian name (2)</label>
+          <input id="parent2Name" name="parent2Name" type="text" />
+        </div>
+        <div>
+          <label for="parent2Dob">Date of birth (2)</label>
+          <input id="parent2Dob" name="parent2Dob" type="date" />
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Uniform</legend>
+
+      <label>Shirt size (Youth)</label>
+      <div class="inline-group" role="group" aria-label="Shirt size (Youth)">
+        <label><input type="radio" name="shirtSize" value="XS" required /> XS</label>
+        <label><input type="radio" name="shirtSize" value="S" /> S</label>
+        <label><input type="radio" name="shirtSize" value="M" /> M</label>
+        <label><input type="radio" name="shirtSize" value="L" /> L</label>
+        <label><input type="radio" name="shirtSize" value="XL" /> XL</label>
+      </div>
+      <p class="note">Parents are responsible for ordering the correct uniform size. If a reorder is necessary due to incorrect sizing, it will be half the amount of orignal price.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Volunteer and sponsorship</legend>
+
+      <label>Volunteer options</label>
+      <div class="inline-group" role="group" aria-label="Volunteer options">
+        <label><input type="checkbox" name="volunteerCoach" value="Coach" /> I am willing to coach (Training provided by the Espada)</label>
+        <label><input type="checkbox" name="volunteerTeamParent" value="Team Parent" /> Be a Team Parent</label>
+        <label><input type="checkbox" name="volunteerOfficial" value="Official" /> Be an official</label>
+        <label><input type="checkbox" name="volunteerTiming" value="Timing/Scorekeeping" /> Help with timing/scorekeeping</label>
+      </div>
+
+      <div class="inline-group" style="margin-top: 8px;">
+        <label><input type="checkbox" name="sponsorInterest" value="Yes" /> I would like to sponsor my child’s team / or know someone that would.</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Consent and signature</legend>
+
+      <p>
+        I, hereby release the Espada Sports Clubs and its designated leaders from accident and liability incurred in Espada sessions.
+        I understand we will not always accept coach requests. I understand, if needed, that people will conduct themselves in a manner
+        that is reflective of the values of the Espada Sports Club so that the children are not distracted with negative reflections
+        through our actions on the sidelines. I understand that no refunds will be given unless the Espada Sports Club cancels the age group.
+      </p>
+
+      <div class="inline-group" style="margin: 8px 0;">
+        <label><input type="checkbox" name="consentAgree" required /> I have read and agree to the above statement.</label>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="signature">Parent/Guardian signature</label>
+          <input id="signature" name="signature" type="text" placeholder="Type full legal name" required />
+        </div>
+        <div>
+          <label for="signatureDate">Date</label>
+          <input id="signatureDate" name="signatureDate" type="date" required />
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>For office use only</legend>
+
+      <div class="row-3">
+        <div>
+          <label for="officeDate">Date</label>
+          <input id="officeDate" name="officeDate" type="date" />
+        </div>
+        <div>
+          <label for="amountPaid">Amount paid</label>
+          <input id="amountPaid" name="amountPaid" type="text" />
+        </div>
+        <div>
+          <label for="receiptNumber">Receipt #</label>
+          <input id="receiptNumber" name="receiptNumber" type="text" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="sportOffice">Sport</label>
+          <input id="sportOffice" name="sportOffice" type="text" value="Football" />
+        </div>
+        <div>
+          <label for="ageGroupOffice">Age group</label>
+          <input id="ageGroupOffice" name="ageGroupOffice" type="text" />
+        </div>
+      </div>
+
+      <div>
+        <label for="registrationTakenBy">Registration taken by</label>
+        <input id="registrationTakenBy" name="registrationTakenBy" type="text" />
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button class="primary" type="submit">Submit registration</button>
+      <button class="secondary" type="reset">Reset form</button>
+    </div>
+    <p><small>The Y — For Youth Development, For Healthy Living, For Social Responsibility.</small></p>
+  </form>
+
+</body>
+</html>
