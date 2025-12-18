@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Store</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #708090;
+      color: white;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      margin-top: 8px;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .products, .cart {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #708090;
+    }
+
+    .product, .cart-item {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 10px 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #708090;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background: #006666;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      text-align: center;
+      background: #f1f1f1;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>No Illness Forever</h1>
+    <nav>
+      <a href="#">Medicines</a>
+      <a href="#medicines">Personal Care</a>
+      <a href="#cart">Fitness</a>
+    </nav>
+  </header>
+<h1>Welcome to No Illness Forever we have excellent staff who will help you and provide best quality medicines. We have various types of high-quality medicines.</h1>
+  <section id="medicines" class="products">
+    <h2>Medicines</h2>
+    <div class="product" data-name="Panadol" data-price="130">
+      <strong>Panadol</strong><br>
+      Fever & pain relief<br>
+      Price: ₹130<br>
+      <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-name="Corex DX" data-price="200">
+      <strong>Corex DX</strong><br>
+      Relief from dry cough, commone cold and hay fever<br>
+      Price: ₹200<br>
+      <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-name="MultiVitamins" data-price="180">
+      <strong>MultiVitamins</strong><br>
+      Boost immunity<br>
+      Price: ₹180<br>
+      <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+  </section>
+
+  <section id="cart" class="cart">
+    <h2>Cart Items</h2>
+    <div id="cart-items">Your cart is empty.</div>
+    <p><strong>Total Bill:</strong> ₹<span id="total">0</span></p>
+    <button onclick="clearCart()">Clear Cart</button>
+  </section>
+
+  <footer>
+    © 2025 No Illness Forever Medical Store |
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(button) {
+      const product = button.parentElement;
+      const name = product.dataset.name;
+      const price = Number(product.dataset.price);
+      cart.push({ name, price });
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItemsDiv = document.getElementById("cart-items");
+      cartItemsDiv.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItemsDiv.textContent = "Your cart is empty.";
+      } else {
+        cart.forEach(item => {
+          const div = document.createElement("div");
+          div.className = "cart-item";
+          div.textContent = `${item.name} - ₹${item.price}`;
+          cartItemsDiv.appendChild(div);
+          total += item.price;
+        });
+      }
+
+      document.getElementById("total").textContent = total;
+    }
+
+    function clearCart() {
+      cart = [];
+      renderCart();
+    }
+  </script>
+</body>
+</html>
