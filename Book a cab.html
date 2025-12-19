@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cab Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f7;
+      padding: 40px;
+    }
+    .booking-form {
+      background: #fff;
+      padding: 25px;
+      max-width: 420px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .booking-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .booking-form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    .booking-form input, .booking-form select, .booking-form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .booking-form button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .booking-form button:hover {
+      background-color: #218838;
+    }
+    .confirmation {
+      margin-top: 15px;
+      color: #28a745;
+      font-weight: bold;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .confirmation span {
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="booking-form">
+    <h2>Cab Booking</h2>
+    
+    <label for="pickup">Pickup City</label>
+    <input type="text" id="pickup" placeholder="Enter pickup Location" >
+    
+    <label for="drop">Drop City</label>
+    <input type="text" id="drop" placeholder="Enter drop Location" >
+    
+    <label for="cabType">Cab Type</label>
+    <select id="cabType">
+      <option value="120">Auto - ₹120</option>
+      <option value="200">Hatchback - ₹200</option>
+      <option value="250">Sedan - ₹250</option>
+      <option value="400">Suv - ₹400</option>
+    </select>
+    
+    <button id="bookBtn">Book Now</button>
+    
+    <div class="confirmation" id="confirmation">
+      ✅ <span id="fareText"></span>
+    </div>
+  </div>
+
+  <script>
+    const bookBtn = document.getElementById('bookBtn');
+    const cabType = document.getElementById('cabType');
+    const confirmation = document.getElementById('confirmation');
+    const fareText = document.getElementById('fareText');
+
+    bookBtn.addEventListener('click', () => {
+      const fare = cabType.value;
+      fareText.textContent = `Cab Booked! Fare: ₹${fare}`;
+      confirmation.style.display = 'flex';
+    });
+  </script>
+
+</body>
+</html>
